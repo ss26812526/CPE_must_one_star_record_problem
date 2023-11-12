@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n, kase=1;
+	
+	while(cin>>n)
+	{
+		int a[10001]={}, b2=0, note[10001]={};
+		
+		for(int i=1; i<=n; i++)
+		{
+			cin>>a[i];
+			if(a[i]<a[i-1])
+				b2=1;
+		}
+		
+		if(b2==0)
+		{
+			for(int i=1; i<=n; i++)
+			{
+				for(int j=i; j<=n; j++)
+				{
+					if(note[a[i]+a[j]]!=0)
+						b2=1;
+					note[a[i]+a[j]]=1;
+				}
+			}
+		}
+		
+		if(b2==0)
+			cout<<"Case #"<<kase++<<": It is a B2-Sequence.\n"<<endl;
+		else
+			cout<<"Case #"<<kase++<<": It is not a B2-Sequence.\n"<<endl;
+	}
+	return 0;
+}
