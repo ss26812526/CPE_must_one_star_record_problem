@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	char s;
+	int k=1;
+	
+	while(cin.get(s))
+	{
+		if(s!='"')
+			cout<<s;
+		else if(k%2==1)
+		{
+			cout<<"``";
+			k++;
+		}
+		else if(k%2==0)
+		{
+			cout<<"''";
+			k++;
+		}
+	}
+	return 0;
+}
