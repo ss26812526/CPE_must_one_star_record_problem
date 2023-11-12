@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define PI 2*acos(0.0)
+
+int main()
+{
+	double s, a;
+	string str;
+	
+	while(cin>>s>>a>>str)
+	{
+		double arc=0, chord=0;
+		
+		if(str=="min")
+			a/=60;
+		if(a>180)
+			a=360-a;
+			
+		arc=2*PI*(s+6440)*a/360;
+		chord=(s+6440)*sin(PI*a/360)*2;
+		
+		cout<<fixed<<setprecision(6)<<arc<<" "<<chord<<endl;
+	}
+	return 0;
+}
