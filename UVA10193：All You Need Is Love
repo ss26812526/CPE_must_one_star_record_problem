@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int gcd(int a, int b)
+{
+	while((a%=b) && (b%=a));
+	
+	return a+b;
+}
+
+int main()
+{
+	int kase, test=1;
+	string a, b;
+	
+	cin>>kase;
+	while(kase--)
+	{
+		cout<<"Pair #"<<test++<<": ";
+		
+		cin>>a>>b;
+		bitset<32>b1(a);
+		bitset<32>b2(b);
+		if(gcd(b1.to_ulong(), b2.to_ulong())>1)
+			cout<<"All you need is love!"<<endl;
+		else
+			cout<<"Love is not all you need!"<<endl;
+	}
+	return 0;
+}
