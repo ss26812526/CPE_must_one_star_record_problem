@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	char s[101][101]={};
+	int max=0, k=0;
+	
+	while(gets(s[k]))
+	{
+		if(max==0)
+			max=strlen(s[k]);
+		else if(max<strlen(s[k]))
+			max=strlen(s[k]);
+		
+		k++;
+	}
+	
+	for(int i=0; i<max; i++)
+	{
+		for(int j=k-1; j>=0; j--)
+		{
+			if(i<strlen(s[j]))
+				cout<<s[j][i];
+			else if(j!=0)
+				cout<<" ";
+		}
+		
+		cout<<endl;
+	}
+	return 0;
+}
