@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	char s;
+	int len=0, a[26]={};
+	
+	while(cin.get(s))
+	{
+		a[toupper(s)-'A']++;
+		len++;
+	}
+	
+	while(--len)
+	{
+		for(int i=0; i<26; i++)
+		{
+			if(a[i]==len)
+				cout<<(char)(i+65)<<" "<<a[i]<<endl;
+		}
+	}
+	return 0;
+}
