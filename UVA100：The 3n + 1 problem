@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a, b;
+	
+	while(cin>>a>>b)
+	{
+		int max_len=1;
+		
+		cout<<a<<" "<<b<<" ";
+		if(a>b)
+			swap(a, b);
+		
+		for(int i=a; i<=b; i++)
+		{
+			int len=1, ba_n=i;
+			
+			while(ba_n!=1)
+			{
+				if(ba_n%2==0)
+				{
+					ba_n/=2;
+					len++;
+				}
+				else
+				{
+					ba_n=3*ba_n+1;
+					len++;
+				}
+			}
+			
+			if(max_len<len)
+				max_len=len;
+		}
+		
+		cout<<max_len<<endl;
+	}
+	return 0;
+}
