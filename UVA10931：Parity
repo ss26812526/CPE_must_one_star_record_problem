@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n;
+	
+	while(cin>>n && n!=0)
+	{
+		stack<int> st;
+		int b1=0;
+		
+		for(int i=n; i; i/=2)
+		{
+			if(i%2==1)
+				b1++;
+			st.push(i%2);
+		}
+		
+		cout<<"The parity of ";
+		while(st.size())
+		{
+			cout<<st.top();
+			st.pop();
+		}
+		
+		cout<<" is "<<b1<<" (mod 2)."<<endl;
+	}
+	return 0;
+}
