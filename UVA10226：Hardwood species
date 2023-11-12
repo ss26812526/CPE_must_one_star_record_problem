@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int kase;
+	
+	cin>>kase;
+	getchar();
+	getchar();
+	while(kase--)
+	{
+		map<string, int> record;
+		map<string, int> ::iterator i;
+		string tree;
+		int n=0;
+		
+		while(getline(cin, tree))
+		{
+			if(tree.compare("")==0)
+				break;
+			record[tree]++;
+			n++;
+		}
+		
+		for(i=record.begin(); i!=record.end(); i++)
+			cout<<i->first<<" "<<fixed<<setprecision(4)<<i->second*100.0/n<<endl;
+		
+		if(kase)
+			cout<<""<<endl;
+	}
+	return 0;
+}
