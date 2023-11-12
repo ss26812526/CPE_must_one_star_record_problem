@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int kase;
+	
+	cin>>kase;
+	while(kase--)
+	{
+		int s, d, a=0, b=0;
+		
+		cin>>s>>d;
+		
+		if((s+d)%2!=0 || s<d)
+		{
+			cout<<"impossible"<<endl;
+			continue;
+		}
+		
+		a=(s+d)/2;
+		b=s-a;
+		if(b<0)
+		{
+			cout<<"impossible"<<endl;
+			continue;
+		}
+		
+		cout<<a<<" "<<b<<endl;
+	}
+	return 0;
+}
