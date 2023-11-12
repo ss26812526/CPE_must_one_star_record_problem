@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n, num, ni;
+	double p, pi;
+	
+	cin>>n;
+	while(n--)
+	{
+		cin>>num>>p>>ni;
+		if(p==0)
+			cout<<"0.0000"<<endl;
+		else
+		{
+			pi=pow(1-p, ni-1)*p/(1-pow(1-p, num));
+			cout<<fixed<<setprecision(4)<<pi<<endl;
+		}
+	}
+	return 0;
+}
